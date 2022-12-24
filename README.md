@@ -51,4 +51,6 @@ npx hardhat run scripts/triggerWinner.js --network goerli
 4. DONE -- You should see an event emitted on the Alchemy smart contract address above.
 
 
-#### The solution to this exercise is precisely the same as the Telephone challenge on Ethernaut [here](https://ethernaut.openzeppelin.com/level/0x1ca9f1c518ec5681C2B7F97c7385C0164c3A22Fe)
+
+
+### The solution above is precisely the same as the one for the Telephone challenge on Ethernaut that can be found [here](https://ethernaut.openzeppelin.com/level/0x1ca9f1c518ec5681C2B7F97c7385C0164c3A22Fe)
