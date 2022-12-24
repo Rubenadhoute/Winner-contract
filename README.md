@@ -48,7 +48,11 @@ npx hardhat run scripts/deploy.js --network goerli
 npx hardhat run scripts/triggerWinner.js --network goerli
 ```
 
-4. DONE -- You should see an event emitted on the Alchemy smart contract address above.
+4. DONE 
+
+P.S:You should see an event emitted on the Alchemy smart contract address above:
+
+<img width="1424" alt="event_winner" src="https://user-images.githubusercontent.com/68856635/209431041-725278e8-aed0-47ad-964d-624d05d8badb.png">
 
 
 
