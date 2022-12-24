@@ -1,27 +1,51 @@
-# AttempWinnerCaller
+## AttempWinnerCaller
 
-The goal of this project is to Emit the winner event on this smart contract on the Goerli testnet: https://goerli.etherscan.io/address/0xcF469d3BEB3Fc24cEe979eFf83BE33ed50988502#code 
+The goal of this project is to Emit the winner event on this Alchemy smart contract on the Goerli testnet: 
+
+https://goerli.etherscan.io/address/0xcF469d3BEB3Fc24cEe979eFf83BE33ed50988502#code 
+
+If you take a look at the code tab, you'll see that the source code for this contract looks like this:
 
 
+```
+// SPDX-License-Identifier: Unlicense
+pragma solidity ^0.8.0;
 
-## Setup
+contract Contract {
+    event Winner(address);
 
-1. Install dependencies
-
-```bash
-npm install
+    function attempt() external {
+        require(msg.sender != tx.origin, "msg.sender is equal to tx.origin");
+        emit Winner(msg.sender);
+    }
+}
 ```
 
-2. Copy `.env.example` to `.env` and fill it with your Alchemy API key. You can get one for free at [alchemy.com](https://www.alchemy.com/). And fill it with your Private Key.
+### Key Learnings
 
-3. Run this command to deploy :
+- Contract deployment via Hardhat
 
-```shell
-npx hardhat run scripts/deploy.ts --network goerli
+- Contract interaction
+
+- Difference between msg.sender and tx.origin. 
+
+
+### Step to reproduce
+
+1. Install dependencies:
+```
+npm i -D hardhat -- yes to all
+npm i dotenv
 ```
 
-4. Install cast for free at [getfoundry.sh](https://book.getfoundry.sh/getting-started/installation) and then run this command to call the function :
-
-```shell
-cast send --private-key PRIVATE_KEY ADDRESS_OF_DEPLOYED_CONTRACT "callAttempt(address)" "0xcF469d3BEB3Fc24cEe979eFf83BE33ed50988502" --rpc-url URL_ALCHEMY_GOERLI
+2. Deploy your contract in Goerli Testnet:
 ```
+npx hardhat run scripts/deploy.js --network goerli
+```
+
+3. Replace the variable CONTRACT_ADDRESS in the script triggerWinner.js with your deployed contract address and run:
+```
+npx hardhat run scripts/triggerWinner.js --network goerli
+```
+
+4. DONE -- You should see an event emitted on the Alchemy smart contract address above. 
