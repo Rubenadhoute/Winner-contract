@@ -53,4 +53,4 @@ npx hardhat run scripts/triggerWinner.js --network goerli
 
 
 
-#### This is also the solution for the Telephone challenge on [Ethernaut] (https://ethernaut.openzeppelin.com/level/0x1ca9f1c518ec5681C2B7F97c7385C0164c3A22Fe)
+#### This is also the solution for the Telephone challenge on [Ethernaut](https://ethernaut.openzeppelin.com/level/0x1ca9f1c518ec5681C2B7F97c7385C0164c3A22Fe)
